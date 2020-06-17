@@ -17,6 +17,14 @@ func RollMulti(num, sides int) int {
 	return sum
 }
 
+func RollUntilHighest(sides int) int {
+	i, res := 0, 0
+	for ; res < sides; i++ {
+		res = Roll(sides)
+	}
+	return i
+}
+
 func Seed(n int64) {
 	if n == 0 {
 		rand.Seed(time.Now().UnixNano())
